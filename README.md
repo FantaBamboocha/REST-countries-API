@@ -1,4 +1,4 @@
-Styled component, react-icons
+Styled component, react-icons, react-select (form-select)
 
 # Frontend Mentor - REST Countries API with color theme switcher
 

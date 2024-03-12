@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { IoMoonSharp, IoSunnySharp } from "react-icons/io5";
 
 import HeaderEl from "./HeaderEl";
-import { Container } from "../Container/Container";
+import Container from "../Container/Container";
 import Wrapper from "./Wrapper";
 import Title from "./Title";
 import ThemeSwitcher from "./ThemeSwitcher";
