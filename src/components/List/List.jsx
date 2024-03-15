@@ -1,5 +1,7 @@
+import Wrapper from "./Wrapper";
+
 const List = ({ children }) => {
-  return <div>{children}</div>;
+  return <Wrapper>{children}</Wrapper>;
 };
 
 export default List;

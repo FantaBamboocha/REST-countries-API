@@ -25,9 +25,21 @@ const App = () => {
       <Main>
         <Controls />
         <List>
-          {countries.map((country) => (
-            <Card key={country.name.common} info={country} />
-          ))}
+          {countries.map((country) => {
+            const countryInfo = {
+              img: country.flags.png,
+              name: country.name.common,
+              info: [
+                {
+                  title: "Population",
+                  value: country.population.toLocaleString(),
+                },
+                { title: "Region", value: country.region },
+                { title: "Capital", value: country.capital },
+              ],
+            };
+            return <Card key={country.name.common} {...countryInfo} />;
+          })}
         </List>
       </Main>
     </>
