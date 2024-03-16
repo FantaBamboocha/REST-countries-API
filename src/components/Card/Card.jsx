@@ -5,9 +5,9 @@ import CardTitle from "./CardTitle";
 import CardLits from "./CardList";
 import CardListItem from "./CardListItem";
 
-const Card = ({ img, name, info = [] }) => {
+const Card = ({ img, name, info = [], onCardClick }) => {
   return (
-    <Wrapper>
+    <Wrapper onClick={() => onCardClick(name)}>
       <CardImage src={img} alt={name} />
       <CardBody>
         <CardTitle> {name} </CardTitle>
