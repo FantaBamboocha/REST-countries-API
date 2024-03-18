@@ -6,7 +6,11 @@ const Search = ({ search, setSearch }) => {
   return (
     <InputContainer>
       <IoSearch size={20} />
-      <Input placeholder="Search for a country" />
+      <Input
+        placeholder="Search for a country"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
     </InputContainer>
   );
 };

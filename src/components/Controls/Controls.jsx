@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Wrapper from "./Wrapper";
 import Serach from "../Controls/Search/Search";
@@ -27,9 +27,15 @@ const options = [
   },
 ];
 
-const Controls = () => {
+const Controls = ({ onSearch }) => {
   const [search, setSearch] = useState("");
   const [region, setRegion] = useState("");
+
+  useEffect(() => {
+    const regionValue = region?.value || "";
+
+    onSearch(search, regionValue);
+  }, [search, region]);
 
   return (
     <Wrapper>
