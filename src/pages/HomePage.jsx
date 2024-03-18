@@ -8,14 +8,14 @@ import Controls from "../components/Controls/Controls";
 import List from "../components/List/List";
 import { useNavigate } from "react-router-dom";
 
-const HomePage = () => {
-  const [countries, setCountries] = useState([]);
-
+const HomePage = ({ countries, setCountries }) => {
   useEffect(() => {
-    axios
-      .get(ALL_COUNTRIES)
-      .then((response) => setCountries(response.data))
-      .catch((error) => console.log(error));
+    if (!countries.length) {
+      axios
+        .get(ALL_COUNTRIES)
+        .then((response) => setCountries(response.data))
+        .catch((error) => console.log(error));
+    }
   }, []);
 
   const navigate = useNavigate();

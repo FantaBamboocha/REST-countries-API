@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const Title = styled.a.attrs({
-  href: "/",
+const Title = styled(Link).attrs({
+  to: "/",
 })`
   text-decoration: none;
   color: var(--color-text);
