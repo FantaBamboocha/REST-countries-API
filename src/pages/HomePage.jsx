@@ -15,6 +15,8 @@ const HomePage = () => {
   const [filteredCountries, setFilteredCountries] = useState(countries);
   const navigate = useNavigate();
 
+  console.log(countries);
+
   useEffect(() => {
     setFilteredCountries(countries);
   }, [countries]);
@@ -30,7 +32,6 @@ const HomePage = () => {
 
   const handleSerach = (search, regionValue) => {
     let filteredData = [...countries];
-    console.log(search, regionValue);
 
     if (regionValue) {
       filteredData = filteredData.filter(({ region }) =>
