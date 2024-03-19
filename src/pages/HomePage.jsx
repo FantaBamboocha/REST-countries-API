@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -8,7 +8,10 @@ import Card from "../components/Card/Card";
 import Controls from "../components/Controls/Controls";
 import List from "../components/List/List";
 
-const HomePage = ({ countries, setCountries }) => {
+import { countriesContext } from "../App";
+
+const HomePage = () => {
+  const { countries, setCountries } = useContext(countriesContext);
   const [filteredCountries, setFilteredCountries] = useState(countries);
   const navigate = useNavigate();
 
@@ -26,7 +29,8 @@ const HomePage = ({ countries, setCountries }) => {
   }, []);
 
   const handleSerach = (search, regionValue) => {
-    let filteredData = [...filteredCountries];
+    let filteredData = [...countries];
+    console.log(search, regionValue);
 
     if (regionValue) {
       filteredData = filteredData.filter(({ region }) =>

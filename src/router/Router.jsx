@@ -6,13 +6,10 @@ import NotFoundPage from "../pages/NotFound";
 
 import ROUTE_NAMES from "./routeNames";
 
-const Router = ({ countries, setCountries }) => {
+const Router = () => {
   return (
     <Routes>
-      <Route
-        path={ROUTE_NAMES.HOME}
-        element={<HomePage countries={countries} setCountries={setCountries} />}
-      />
+      <Route path={ROUTE_NAMES.HOME} element={<HomePage />} />
       <Route path={ROUTE_NAMES.COUNTRY} element={<Details />} />
 
       <Route path="*" element={<NotFoundPage />} />
