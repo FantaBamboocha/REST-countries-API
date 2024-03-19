@@ -15,8 +15,6 @@ const HomePage = () => {
   const [filteredCountries, setFilteredCountries] = useState(countries);
   const navigate = useNavigate();
 
-  console.log(countries);
-
   useEffect(() => {
     setFilteredCountries(countries);
   }, [countries]);
