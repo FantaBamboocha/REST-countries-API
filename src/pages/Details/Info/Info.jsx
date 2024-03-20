@@ -15,7 +15,7 @@ import Tag from "./Borders/Tag";
 import getNativeNames from "../../../utils/getNativeNames";
 import getCurrensies from "../../../utils/getCurrensies";
 import getLanguages from "../../../utils/getLanguages";
-import { filterByCode, searchByName } from "../../../config";
+import { filterByCode } from "../../../config";
 
 const Info = (props) => {
   const {
@@ -35,8 +35,8 @@ const Info = (props) => {
 
   const navigate = useNavigate();
 
-  const onBorderClick = (name) => {
-    navigate(`/country/${name}`, { replace: true });
+  const onBorderClick = (country) => {
+    navigate(`/country/${country}`, { state: `/country/${name.common}` });
   };
 
   useEffect(() => {
@@ -99,9 +99,9 @@ const Info = (props) => {
           <b>Border Countries:</b>
           {borders ? (
             <TagGroup>
-              {bordersCountries.map((countrie) => (
-                <Tag key={countrie} onClick={() => onBorderClick(countrie)}>
-                  {countrie}
+              {bordersCountries.map((country) => (
+                <Tag key={country} onClick={() => onBorderClick(country)}>
+                  {country}
                 </Tag>
               ))}
             </TagGroup>
